@@ -1,7 +1,6 @@
 # Задание: загрузка файла
 
 import os
-import time
 import pytest
 
 from selenium.webdriver.common.by import By
@@ -9,7 +8,7 @@ from generator.generator import generated_person
 from pages.base_page import BasePage
 
 class TestUploadFile():
-    @pytest.mark.debug
+    @pytest.mark.smoke
     def test_upload_file(self, browser):
         try:
             main_page = BasePage(browser, "http://suninjuly.github.io/file_input.html")
@@ -23,4 +22,5 @@ class TestUploadFile():
             main_page.find_element_and_send_keys((By.XPATH, "//*[@id='file']"), file_path)
             main_page.find_element_and_click((By.XPATH, "//*[@type='submit']"))
         finally:
-            time.sleep(0.5)
+            alert_text = browser.switch_to.alert.text
+            print(alert_text)

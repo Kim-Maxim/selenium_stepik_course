@@ -1,6 +1,5 @@
 # Задание: поиск элементов с помощью Selenium
 
-import time
 import pytest
 
 from selenium.webdriver.common.by import By
@@ -20,5 +19,6 @@ class TestSearhOfElements:
             main_page.find_element_and_send_keys((By.ID, "country"), person_info.country)
             main_page.find_element_and_click((By.CSS_SELECTOR, "button.btn"))
         finally:
-            time.sleep(0.5)
+            alert_text = browser.switch_to.alert.text
+            print(alert_text)
             

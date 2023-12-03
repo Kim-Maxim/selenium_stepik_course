@@ -1,6 +1,5 @@
 # Задание: работа с выпадающим списком
 
-import time
 import pytest
 
 from selenium.webdriver.common.by import By
@@ -20,4 +19,5 @@ class TestSelectList():
             select.select_by_value(str(sum))
             main_page.find_element_and_click((By.XPATH, "//*[@type='submit']"))
         finally:
-            time.sleep(0.5)
+            alert_text = browser.switch_to.alert.text
+            print(alert_text)

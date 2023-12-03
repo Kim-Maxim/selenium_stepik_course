@@ -1,5 +1,6 @@
 import math
-
+from selenium.webdriver.support.ui import WebDriverWait as wait
+from selenium.webdriver.support import expected_conditions as EC
 
 class BasePage:
     def __init__(self, browser, url):
@@ -27,3 +28,6 @@ class BasePage:
     def go_to_element_and_click(self, locator):
         self.browser.execute_script("return arguments[0].scrollIntoView(true);", self.browser.find_element(*locator))
         self.browser.find_element(*locator).click()
+
+    def wait_text(self, locator, text, timeout = 15):
+        return wait(self.browser, timeout).until(EC.text_to_be_present_in_element(locator, text))

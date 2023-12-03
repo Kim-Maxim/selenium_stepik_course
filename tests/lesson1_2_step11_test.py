@@ -1,6 +1,5 @@
 # Запуск браузера и первый скрипт
 
-import time
 import pytest
 
 from selenium.webdriver.common.by import By
@@ -15,4 +14,5 @@ class TestFirstScript:
             main_page.find_element_and_send_keys((By.CSS_SELECTOR, ".textarea"), "get()")
             main_page.find_element_and_click((By.CSS_SELECTOR, ".submit-submission"))
         finally:
-            time.sleep(0.5)
+            alert_text = browser.switch_to.alert.text
+            print(alert_text)

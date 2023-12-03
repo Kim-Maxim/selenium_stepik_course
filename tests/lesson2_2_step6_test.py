@@ -1,6 +1,5 @@
 # Задание на execute_script
 
-import time
 import pytest
 
 from selenium.webdriver.common.by import By
@@ -19,4 +18,5 @@ class TestExcuteScript():
             main_page.go_to_element_and_click((By.XPATH, "//*[@id='robotsRule']"))
             main_page.go_to_element_and_click((By.XPATH, "//*[@type='submit']"))
         finally:
-            time.sleep(0.5)
+            alert_text = browser.switch_to.alert.text
+            print(alert_text)
