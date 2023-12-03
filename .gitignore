@@ -1,0 +1,8 @@
+env
+.vscode
+.pytest_cache
+__pycache__
+/data/__pycache__
+/generator/__pycache__
+/pages/__pycache__
+/tests/__pycache__
