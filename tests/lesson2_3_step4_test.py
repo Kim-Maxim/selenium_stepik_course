@@ -1,13 +1,16 @@
 # Задание: принимаем alert
 
 import pytest
+import allure
 
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 
-class TestUploadFile():
+@allure.suite('Задание 2-3-4')
+class TestSwitchToAlert():
     @pytest.mark.smoke
-    def test_upload_file(self, browser):
+    @allure.title('принимаем alert')
+    def test_switch_to_alert(self, browser):
         try:
             main_page = BasePage(browser, "http://suninjuly.github.io/alert_accept.html")
             main_page.open()
@@ -20,3 +23,4 @@ class TestUploadFile():
         finally:
             alert_text = browser.switch_to.alert.text
             print(alert_text)
+            assert "Congrats, you've passed the task! Copy this code as the answer to Stepik quiz:" in alert_text, "The task have failed"

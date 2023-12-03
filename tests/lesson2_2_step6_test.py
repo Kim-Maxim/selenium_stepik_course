@@ -1,12 +1,15 @@
 # Задание на execute_script
 
 import pytest
+import allure
 
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 
+@allure.suite('Задание 2-2-6')
 class TestExcuteScript():
     @pytest.mark.smoke
+    @allure.title('работа с execute_script')
     def test_execute_script(self, browser):
         try:
             main_page = BasePage(browser, "http://suninjuly.github.io/execute_script.html")
@@ -20,3 +23,4 @@ class TestExcuteScript():
         finally:
             alert_text = browser.switch_to.alert.text
             print(alert_text)
+            assert "Congrats, you've passed the task! Copy this code as the answer to Stepik quiz:" in alert_text, "The task have failed"

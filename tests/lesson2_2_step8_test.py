@@ -2,13 +2,16 @@
 
 import os
 import pytest
+import allure
 
 from selenium.webdriver.common.by import By
 from generator.generator import generated_person
 from pages.base_page import BasePage
 
+@allure.suite('Задание 2-2-8')
 class TestUploadFile():
     @pytest.mark.smoke
+    @allure.title('загрузка файла')
     def test_upload_file(self, browser):
         try:
             main_page = BasePage(browser, "http://suninjuly.github.io/file_input.html")
@@ -24,3 +27,4 @@ class TestUploadFile():
         finally:
             alert_text = browser.switch_to.alert.text
             print(alert_text)
+            assert "Congrats, you've passed the task! Copy this code as the answer for Stepik quiz:" in alert_text, "The task have failed"

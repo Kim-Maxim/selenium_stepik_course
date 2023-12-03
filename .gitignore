@@ -6,3 +6,4 @@ __pycache__
 /generator/__pycache__
 /pages/__pycache__
 /tests/__pycache__
+/tests/allure_results

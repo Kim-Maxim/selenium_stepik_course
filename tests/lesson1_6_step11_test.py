@@ -1,13 +1,16 @@
 # Задание: уникальность селекторов
 
 import pytest
+import allure
 
 from selenium.webdriver.common.by import By
 from generator.generator import generated_person
 from pages.base_page import BasePage
 
+@allure.suite('Задание 1-6-11')
 class TestUniqSelectors():
-    @pytest.mark.debug
+    @pytest.mark.smoke
+    @allure.title('уникальность селекторов')
     def test_uniq_selectors(self, browser):
         try:
             main_page = BasePage(browser, "http://suninjuly.github.io/registration1.html")

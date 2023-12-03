@@ -1,13 +1,16 @@
 # Задание: поиск элемента по XPath
 
 import pytest
+import allure
 
 from selenium.webdriver.common.by import By
 from generator.generator import generated_person
 from pages.base_page import BasePage
 
+@allure.suite('Задание 1-6-8')
 class TestSearhOfElementByXpath:
     @pytest.mark.smoke
+    @allure.title('поиск элемента по XPath')
     def test_search_of_element_by_xpath(self, browser):
         try:
             main_page = BasePage(browser, "http://suninjuly.github.io/find_xpath_form.html")
@@ -21,3 +24,4 @@ class TestSearhOfElementByXpath:
         finally:
             alert_text = browser.switch_to.alert.text
             print(alert_text)
+            assert "Congrats, you've passed the task! Copy this code as the answer for Stepik quiz:" in alert_text, "The task have failed"

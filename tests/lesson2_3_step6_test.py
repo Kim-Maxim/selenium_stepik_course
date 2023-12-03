@@ -1,13 +1,15 @@
 # Задание: переход на новую вкладку
 
 import pytest
-
+import allure
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 
-class TestSwitchNewTab():
+@allure.suite('Задание 2-3-6')
+class TestSwitchToNewTab():
     @pytest.mark.smoke
-    def test_switch_new_tab(self, browser):
+    @allure.title('переход на новую вкладку')
+    def test_switch_to_new_tab(self, browser):
         try:
             main_page = BasePage(browser, "http://suninjuly.github.io/redirect_accept.html")
             main_page.open()
@@ -20,3 +22,4 @@ class TestSwitchNewTab():
         finally:
             alert_text = browser.switch_to.alert.text
             print(alert_text)
+            assert "Congrats, you've passed the task! Copy this code as the answer to Stepik quiz:" in alert_text, "The task have failed"

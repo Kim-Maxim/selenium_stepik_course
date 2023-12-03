@@ -1,13 +1,16 @@
 # Задание: поиск элементов с помощью Selenium
 
 import pytest
+import allure
 
 from selenium.webdriver.common.by import By
 from generator.generator import generated_person
 from pages.base_page import BasePage
 
+@allure.suite('Задание 1-6-4')
 class TestSearhOfElements:
     @pytest.mark.smoke
+    @allure.title('поиск элементов с помощью Selenium')
     def test_search_of_elements(self, browser):
         try:
             main_page = BasePage(browser, "http://suninjuly.github.io/simple_form_find_task.html")
@@ -21,4 +24,5 @@ class TestSearhOfElements:
         finally:
             alert_text = browser.switch_to.alert.text
             print(alert_text)
+            assert "Congrats, you've passed the task! Copy this code as the answer for Stepik quiz:" in alert_text, "The task have failed"
             
