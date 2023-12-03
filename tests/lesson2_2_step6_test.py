@@ -22,5 +22,5 @@ class TestExcuteScript():
             main_page.go_to_element_and_click((By.XPATH, "//*[@type='submit']"))
         finally:
             alert_text = browser.switch_to.alert.text
-            print(alert_text)
+            print(alert_text.split(':')[1])
             assert "Congrats, you've passed the task! Copy this code as the answer to Stepik quiz:" in alert_text, "The task have failed"

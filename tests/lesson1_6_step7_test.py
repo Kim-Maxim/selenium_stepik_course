@@ -19,5 +19,5 @@ class TestUseMethodByFindElements:
             button.click()
         finally:
             alert_text = browser.switch_to.alert.text
-            print(alert_text)
+            print(alert_text.split(':')[1])
             assert "Congrats, you've passed the task! Copy this code as the answer for Stepik quiz:" in alert_text, "The task have failed"
