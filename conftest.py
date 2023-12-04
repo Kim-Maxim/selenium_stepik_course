@@ -2,13 +2,13 @@ import pytest
 import allure
 
 from selenium import webdriver
-from datetime import datetime
+from selenium.webdriver.chrome.options import Options
 
 @pytest.fixture(scope = 'function')
 def browser():
-    browser = webdriver.Chrome()
+    options = Options()
+    options.add_experimental_option('excludeSwitches', ['enable-logging'])
+    browser = webdriver.Chrome(options=options)
     browser.maximize_window()
     yield browser
-    # attach = browser.get_screenshot_as_png()
-    # allure.attach(attach, name=f"Screenshot {datetime.today()}", attachment_type=allure.attachment_type.PNG)
     browser.quit()

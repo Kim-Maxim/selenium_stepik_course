@@ -25,3 +25,4 @@ class TestUniqSelectors():
             welcome_text = main_page.find_element_and_text((By.TAG_NAME, "h1"))
         finally:
             assert welcome_text == "Congratulations! You have successfully registered!", "Welcome text is incorrect"
+            
