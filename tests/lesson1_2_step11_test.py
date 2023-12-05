@@ -18,4 +18,4 @@ class TestFirstScript:
             main_page.find_element_and_click((By.CSS_SELECTOR, ".submit-submission"))
         finally:
             alert_text = browser.switch_to.alert.text
-            assert alert_text == "Thank you for submitting the form!", "The task have failed"
+            assert alert_text == "Thank you for submitting the form!", "The task has failed"
