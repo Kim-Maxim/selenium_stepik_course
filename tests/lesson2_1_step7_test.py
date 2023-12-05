@@ -6,7 +6,7 @@ import allure
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 
-@allure.suite('Задание 2-1-7')
+@allure.feature('Задание 2-1-7')
 class TestGetAttribute():
     @pytest.mark.smoke
     @allure.title('поиск сокровища с помощью get_attribute')

@@ -6,7 +6,7 @@ import allure
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 
-@allure.suite('Задание 1-2-11')
+@allure.feature('Задание 1-2-11')
 class TestFirstScript:
     @pytest.mark.smoke
     @allure.title('запуск браузера и первый скрипт')

@@ -8,7 +8,7 @@ from selenium.webdriver.common.by import By
 @allure.suite('Задание 1-6-7')
 class TestUseMethodByFindElements:
     @pytest.mark.smoke
-    @allure.title('использование метода find_elements')
+    @allure.feature('использование метода find_elements')
     def test_use_method_by_find_elements(self, browser):
         try:
             browser.get("http://suninjuly.github.io/huge_form.html")

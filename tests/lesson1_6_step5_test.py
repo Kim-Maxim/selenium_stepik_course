@@ -8,7 +8,7 @@ from selenium.webdriver.common.by import By
 from generator.generator import generated_person
 from pages.base_page import BasePage
 
-@allure.suite('Задание 1-6-5')
+@allure.feature('Задание 1-6-5')
 class TestSearhOfElementByLink:
     @pytest.mark.smoke
     @allure.title('поиск элемента по тексту в ссылке')

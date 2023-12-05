@@ -5,7 +5,7 @@ import allure
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 
-@allure.suite('Задание 2-3-6')
+@allure.feature('Задание 2-3-6')
 class TestSwitchToNewTab():
     @pytest.mark.smoke
     @allure.title('переход на новую вкладку')

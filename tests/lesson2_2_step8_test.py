@@ -8,7 +8,7 @@ from selenium.webdriver.common.by import By
 from generator.generator import generated_person
 from pages.base_page import BasePage
 
-@allure.suite('Задание 2-2-8')
+@allure.feature('Задание 2-2-8')
 class TestUploadFile():
     @pytest.mark.smoke
     @allure.title('загрузка файла')

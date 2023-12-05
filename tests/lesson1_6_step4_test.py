@@ -10,7 +10,7 @@ from pages.base_page import BasePage
 @allure.suite('Задание 1-6-4')
 class TestSearhOfElements:
     @pytest.mark.smoke
-    @allure.title('поиск элементов с помощью Selenium')
+    @allure.feature('поиск элементов с помощью Selenium')
     def test_search_of_elements(self, browser):
         try:
             main_page = BasePage(browser, "http://suninjuly.github.io/simple_form_find_task.html")

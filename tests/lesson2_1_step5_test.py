@@ -6,7 +6,7 @@ import allure
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 
-@allure.suite('Задание 2-1-5')
+@allure.feature('Задание 2-1-5')
 class TestClickCheckboxAndRadiobutton():
     @pytest.mark.smoke
     @allure.title('кликаем по checkboxes и radiobuttons (капча для роботов)')

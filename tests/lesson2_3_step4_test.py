@@ -6,7 +6,7 @@ import allure
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 
-@allure.suite('Задание 2-3-4')
+@allure.feature('Задание 2-3-4')
 class TestSwitchToAlert():
     @pytest.mark.smoke
     @allure.title('принимаем alert')

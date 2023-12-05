@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 from selenium.webdriver.support.ui import Select
 
-@allure.suite('Задание 2-2-3')
+@allure.feature('Задание 2-2-3')
 class TestSelectList():
     @pytest.mark.smoke
     @allure.title('работа с выпадающим списком')

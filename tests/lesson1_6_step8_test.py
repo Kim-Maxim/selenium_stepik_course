@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 from generator.generator import generated_person
 from pages.base_page import BasePage
 
-@allure.suite('Задание 1-6-8')
+@allure.feature('Задание 1-6-8')
 class TestSearhOfElementByXpath:
     @pytest.mark.smoke
     @allure.title('поиск элемента по XPath')

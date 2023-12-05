@@ -6,7 +6,7 @@ import allure
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 
-@allure.suite('Задание 2-4-8')
+@allure.feature('Задание 2-4-8')
 class TestWaitByText():
     @pytest.mark.smoke
     @allure.title('ждем нужный текст на странице')

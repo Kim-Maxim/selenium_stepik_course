@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 from generator.generator import generated_person
 from pages.base_page import BasePage
 
-@allure.suite('Задание 1-6-11')
+@allure.feature('Задание 1-6-11')
 class TestUniqSelectors():
     @pytest.mark.smoke
     @allure.title('уникальность селекторов')
