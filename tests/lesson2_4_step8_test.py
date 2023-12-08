@@ -3,7 +3,7 @@
 import pytest
 import allure
 
-from selenium.webdriver.common.by import By
+from locators.locators import LocatorsLesson2_4_step8
 from pages.base_page import BasePage
 
 @allure.feature('Задание 2-4-8')
@@ -14,12 +14,13 @@ class TestWaitByText():
         try:
             main_page = BasePage(browser, "http://suninjuly.github.io/explicit_wait2.html")
             main_page.open()
-            main_page.wait_text((By.XPATH, "//*[@id='price']"), "$100")
-            main_page.find_element_and_click((By.XPATH, "//*[@id='book']"))
-            x = main_page.find_element_and_text((By.XPATH, "//*[@id='input_value']"))
+            locators = LocatorsLesson2_4_step8
+            main_page.wait_text(locators.PRICE, "$100")
+            main_page.find_element_and_click(locators.BOOK)
+            x = main_page.find_element_and_text(locators.VALUE_X)
             y = main_page.calc(x)
-            main_page.find_element_and_send_keys((By.XPATH, "//*[@id='answer']"), y)       
-            main_page.find_element_and_click((By.XPATH, "//*[@type='submit']"))
+            main_page.find_element_and_send_keys(locators.INPUT, y)       
+            main_page.find_element_and_click(locators.BUTTON_SUBMIT)
         finally:
             alert_text = browser.switch_to.alert.text
             print(alert_text.split(':')[1])

@@ -3,7 +3,7 @@
 import pytest
 import allure
 
-from selenium.webdriver.common.by import By
+from locators.locators import LocatorsLesson2_2_step3
 from pages.base_page import BasePage
 from selenium.webdriver.support.ui import Select
 
@@ -15,12 +15,13 @@ class TestSelectList():
         try:
             main_page = BasePage(browser, "https://suninjuly.github.io/selects1.html")
             main_page.open()
-            x = main_page.find_element_and_text((By.XPATH, "//*[@id='num1']"))
-            y = main_page.find_element_and_text((By.XPATH, "//*[@id='num2']"))
+            locators = LocatorsLesson2_2_step3
+            x = main_page.find_element_and_text(locators.NUM_1)
+            y = main_page.find_element_and_text(locators.NUM_2)
             sum = int(x) + int(y)
-            select = Select(browser.find_element(By.TAG_NAME, "select"))
+            select = Select(browser.find_element(*locators.SELECT))
             select.select_by_value(str(sum))
-            main_page.find_element_and_click((By.XPATH, "//*[@type='submit']"))
+            main_page.find_element_and_click(locators.BUTTON_SUBMIT)
         finally:
             alert_text = browser.switch_to.alert.text
             print(alert_text.split(':')[1])

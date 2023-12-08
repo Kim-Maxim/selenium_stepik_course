@@ -3,8 +3,8 @@
 import pytest
 import allure
 
-from selenium.webdriver.common.by import By
 from generator.generator import generated_person
+from locators.locators import LocatorsLesson1_6_step11
 from pages.base_page import BasePage
 
 @allure.feature('Задание 1-6-11')
@@ -15,14 +15,15 @@ class TestUniqSelectors():
         try:
             main_page = BasePage(browser, "http://suninjuly.github.io/registration1.html")
             main_page.open()
+            locators = LocatorsLesson1_6_step11
             person_info = next(generated_person())
-            main_page.find_element_and_send_keys((By.CSS_SELECTOR, "input[placeholder='Input your first name']"), person_info.firstname)
-            main_page.find_element_and_send_keys((By.CSS_SELECTOR, "input[placeholder='Input your last name']"), person_info.lastname)
-            main_page.find_element_and_send_keys((By.CSS_SELECTOR, "input[placeholder='Input your email']"), person_info.email)
-            main_page.find_element_and_send_keys((By.CSS_SELECTOR, "input[placeholder='Input your phone:']"), person_info.phone)
-            main_page.find_element_and_send_keys((By.CSS_SELECTOR, "input[placeholder='Input your address:']"), person_info.address)
-            main_page.find_element_and_click((By.XPATH, "//*[@type='submit']"))
-            welcome_text = main_page.find_element_and_text((By.TAG_NAME, "h1"))
+            main_page.find_element_and_send_keys(locators.FIRST_NAME, person_info.firstname)
+            main_page.find_element_and_send_keys(locators.LAST_NAME, person_info.lastname)
+            main_page.find_element_and_send_keys(locators.EMAIL, person_info.email)
+            main_page.find_element_and_send_keys(locators.PHONE, person_info.phone)
+            main_page.find_element_and_send_keys(locators.ADDRESS, person_info.address)
+            main_page.find_element_and_click(locators.BUTTON_SUBMIT)
+            welcome_text = main_page.find_element_and_text(locators.TEXT)
         finally:
             assert welcome_text == "Congratulations! You have successfully registered!", "Welcome text is incorrect"
             

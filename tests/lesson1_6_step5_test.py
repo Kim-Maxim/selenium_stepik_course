@@ -6,6 +6,7 @@ import allure
 
 from selenium.webdriver.common.by import By
 from generator.generator import generated_person
+from locators.locators import LocatorsLesson1_6_step5
 from pages.base_page import BasePage
 
 @allure.feature('Задание 1-6-5')
@@ -16,13 +17,14 @@ class TestSearhOfElementByLink:
         try:
             main_page = BasePage(browser, "http://suninjuly.github.io/find_link_text.html")
             main_page.open()
+            locators = LocatorsLesson1_6_step5
             person_info = next(generated_person())
             main_page.find_element_and_click((By.LINK_TEXT, str(math.ceil(math.pow(math.pi, math.e)*10000))))
-            main_page.find_element_and_send_keys((By.NAME, "first_name"), person_info.firstname)
-            main_page.find_element_and_send_keys((By.NAME, "last_name"), person_info.lastname)
-            main_page.find_element_and_send_keys((By.NAME, "firstname"), person_info.city)
-            main_page.find_element_and_send_keys((By.ID, "country"), person_info.country)
-            main_page.find_element_and_click((By.CSS_SELECTOR, "button.btn"))
+            main_page.find_element_and_send_keys(locators.FIRST_NAME, person_info.firstname)
+            main_page.find_element_and_send_keys(locators.LAST_NAME, person_info.lastname)
+            main_page.find_element_and_send_keys(locators.CITY, person_info.city)
+            main_page.find_element_and_send_keys(locators.COUNTRY, person_info.country)
+            main_page.find_element_and_click(locators.BUTTON_SUBMIT)
         finally:
             alert_text = browser.switch_to.alert.text
             print(alert_text.split(':')[1])
