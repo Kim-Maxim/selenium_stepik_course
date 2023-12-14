@@ -9,7 +9,8 @@ from pages.base_page import BasePage
 
 @allure.feature('Задание 1-6-11')
 class TestUniqSelectors():
-    @pytest.mark.smoke
+    @pytest.mark.regress
+    @allure.severity(allure.severity_level.MINOR)
     @allure.title('уникальность селекторов')
     def test_uniq_selectors(self, browser):
         try:

@@ -10,6 +10,7 @@ from selenium.webdriver.support.ui import Select
 @allure.feature('Задание 2-2-3')
 class TestSelectList():
     @pytest.mark.smoke
+    @allure.severity(allure.severity_level.NORMAL)
     @allure.title('работа с выпадающим списком')
     def test_select_list(self, browser):
         try:

@@ -9,6 +9,7 @@ from pages.base_page import BasePage
 @allure.feature('Задание 2-1-5')
 class TestClickCheckboxAndRadiobutton():
     @pytest.mark.smoke
+    @allure.severity(allure.severity_level.NORMAL)
     @allure.title('кликаем по checkboxes и radiobuttons (капча для роботов)')
     def test_click_checkbox_and_radiobutton(self, browser):
         try:

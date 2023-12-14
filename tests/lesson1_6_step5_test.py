@@ -12,6 +12,7 @@ from pages.base_page import BasePage
 @allure.feature('Задание 1-6-5')
 class TestSearhOfElementByLink:
     @pytest.mark.smoke
+    @allure.severity(allure.severity_level.MINOR)
     @allure.title('поиск элемента по тексту в ссылке')
     def test_search_of_element_by_link(self, browser):
         try:

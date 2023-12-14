@@ -29,7 +29,7 @@ class BasePage:
     def find_element_and_get_attribute(self, locator, attr):
         return self.browser.find_element(*locator).get_attribute(attr)
 
-    @allure.step('посчитать')
+    @allure.step('посчитать математическую формулу')
     def calc(self, x):
         return str(math.log(abs(12*math.sin(int(x)))))
     

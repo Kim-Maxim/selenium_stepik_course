@@ -8,7 +8,8 @@ from pages.base_page import BasePage
 
 @allure.feature('Задание 2-3-4')
 class TestSwitchToAlert():
-    @pytest.mark.smoke
+    @pytest.mark.regress
+    @allure.severity(allure.severity_level.BLOCKER)
     @allure.title('принимаем alert')
     def test_switch_to_alert(self, browser):
         try:

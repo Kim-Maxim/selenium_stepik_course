@@ -7,7 +7,8 @@ from locators.locators import LocatorsLesson1_6_step7
 
 @allure.suite('Задание 1-6-7')
 class TestUseMethodByFindElements:
-    @pytest.mark.smoke
+    @pytest.mark.regress
+    @allure.severity(allure.severity_level.MINOR)
     @allure.feature('использование метода find_elements')
     def test_use_method_by_find_elements(self, browser):
         locators = LocatorsLesson1_6_step7

@@ -8,7 +8,9 @@ from pages.base_page import BasePage
 
 @allure.feature('Задание 1-2-11')
 class TestFirstScript:
+    
     @pytest.mark.smoke
+    @allure.severity(allure.severity_level.TRIVIAL)
     @allure.title('запуск браузера и первый скрипт')
     def test_first_script(self, browser):
         try:

@@ -11,6 +11,7 @@ from pages.base_page import BasePage
 @allure.feature('Задание 2-2-8')
 class TestUploadFile():
     @pytest.mark.smoke
+    @allure.severity(allure.severity_level.BLOCKER)
     @allure.title('загрузка файла')
     def test_upload_file(self, browser):
         try:

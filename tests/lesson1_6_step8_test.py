@@ -10,6 +10,7 @@ from pages.base_page import BasePage
 @allure.feature('Задание 1-6-8')
 class TestSearhOfElementByXpath:
     @pytest.mark.smoke
+    @allure.severity(allure.severity_level.MINOR)
     @allure.title('поиск элемента по XPath')
     def test_search_of_element_by_xpath(self, browser):
         try:

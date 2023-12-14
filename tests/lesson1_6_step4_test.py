@@ -9,7 +9,9 @@ from pages.base_page import BasePage
 
 @allure.suite('Задание 1-6-4')
 class TestSearhOfElements:
-    @pytest.mark.smoke
+
+    @pytest.mark.regress
+    @allure.severity(allure.severity_level.TRIVIAL)
     @allure.feature('поиск элементов с помощью Selenium')
     def test_search_of_elements(self, browser):
         try:

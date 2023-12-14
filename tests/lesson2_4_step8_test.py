@@ -8,7 +8,8 @@ from pages.base_page import BasePage
 
 @allure.feature('Задание 2-4-8')
 class TestWaitByText():
-    @pytest.mark.smoke
+    @pytest.mark.regress
+    @allure.severity(allure.severity_level.BLOCKER)
     @allure.title('ждем нужный текст на странице')
     def test_wait_by_text(self, browser):
         try:

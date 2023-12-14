@@ -8,7 +8,8 @@ from pages.base_page import BasePage
 
 @allure.feature('Задание 2-2-6')
 class TestExcuteScript():
-    @pytest.mark.smoke
+    @pytest.mark.regress
+    @allure.severity(allure.severity_level.NORMAL)
     @allure.title('работа с execute_script')
     def test_execute_script(self, browser):
         try:

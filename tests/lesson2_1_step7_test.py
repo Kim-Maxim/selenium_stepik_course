@@ -8,7 +8,8 @@ from pages.base_page import BasePage
 
 @allure.feature('Задание 2-1-7')
 class TestGetAttribute():
-    @pytest.mark.smoke
+    @pytest.mark.regress
+    @allure.severity(allure.severity_level.NORMAL)
     @allure.title('поиск сокровища с помощью get_attribute')
     def test_get_attribute(self, browser):
         try:

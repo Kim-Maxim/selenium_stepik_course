@@ -9,6 +9,7 @@ from pages.base_page import BasePage
 @allure.feature('Задание 2-3-6')
 class TestSwitchToNewTab():
     @pytest.mark.smoke
+    @allure.severity(allure.severity_level.BLOCKER)
     @allure.title('переход на новую вкладку')
     def test_switch_to_new_tab(self, browser):
         try:
