@@ -5,11 +5,12 @@ import allure
 
 from locators.locators import LocatorsLesson1_6_step7
 
-@allure.suite('Задание 1-6-7')
+
+@allure.suite("Задание 1-6-7")
 class TestUseMethodByFindElements:
     @pytest.mark.regress
     @allure.severity(allure.severity_level.MINOR)
-    @allure.feature('использование метода find_elements')
+    @allure.feature("использование метода find_elements")
     def test_use_method_by_find_elements(self, browser):
         locators = LocatorsLesson1_6_step7
         try:
@@ -21,6 +22,8 @@ class TestUseMethodByFindElements:
             button.click()
         finally:
             alert_text = browser.switch_to.alert.text
-            print(alert_text.split(':')[1])
-            assert "Congrats, you've passed the task! Copy this code as the answer for Stepik quiz:" in alert_text, "The task has failed"
-            
+            print(alert_text.split(":")[1])
+            assert (
+                "Congrats, you've passed the task! Copy this code as the answer for Stepik quiz:"
+                in alert_text
+            ), "The task has failed"

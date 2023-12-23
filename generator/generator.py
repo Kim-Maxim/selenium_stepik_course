@@ -1,8 +1,9 @@
 from data.data import Person
 from faker import Faker
 
-faker_ru = Faker('ru_RU')
+faker_ru = Faker("ru_RU")
 Faker.seed()
+
 
 def generated_person():
     yield Person(
@@ -12,6 +13,5 @@ def generated_person():
         city=faker_ru.city(),
         country=faker_ru.country(),
         phone=faker_ru.msisdn(),
-        address=faker_ru.address()
+        address=faker_ru.address(),
     )
-        

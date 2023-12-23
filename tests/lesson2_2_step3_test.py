@@ -7,11 +7,12 @@ from locators.locators import LocatorsLesson2_2_step3
 from pages.base_page import BasePage
 from selenium.webdriver.support.ui import Select
 
-@allure.feature('Задание 2-2-3')
-class TestSelectList():
+
+@allure.feature("Задание 2-2-3")
+class TestSelectList:
     @pytest.mark.smoke
     @allure.severity(allure.severity_level.NORMAL)
-    @allure.title('работа с выпадающим списком')
+    @allure.title("работа с выпадающим списком")
     def test_select_list(self, browser):
         try:
             main_page = BasePage(browser, "https://suninjuly.github.io/selects1.html")
@@ -25,5 +26,8 @@ class TestSelectList():
             main_page.find_element_and_click(locators.BUTTON_SUBMIT)
         finally:
             alert_text = browser.switch_to.alert.text
-            print(alert_text.split(':')[1])
-            assert "Congrats, you've passed the task! Copy this code as the answer for Stepik quiz:" in alert_text, "The task has failed"
+            print(alert_text.split(":")[1])
+            assert (
+                "Congrats, you've passed the task! Copy this code as the answer for Stepik quiz:"
+                in alert_text
+            ), "The task has failed"
